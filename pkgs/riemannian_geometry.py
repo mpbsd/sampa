@@ -47,13 +47,15 @@ class diagonal_metric_tensor:
         return C.simplify()
 
     def riemann(self, i, j, k, l):
-        R = diff(self.Gamma(i, k, l), self.x[j], 1) - diff(
-            self.Gamma(i, j, l), self.x[k], 1
+        R = (
+            diff(self.Gamma(i, k, l), self.x[j], 1)
+            - diff(self.Gamma(i, j, l), self.x[k], 1)
         )
         for m in range(self.n):
-            R += self.Gamma(i, k, m) * self.Gamma(m, j, l) - self.Gamma(
-                i, j, m
-            ) * self.Gamma(m, k, l)
+            R += (
+                self.Gamma(i, k, m) * self.Gamma(m, j, l)
+                - self.Gamma(i, j, m) * self.Gamma(m, k, l)
+            )
         return R.simplify()
 
     def ricci(self, i, j):
