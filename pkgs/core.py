@@ -5,69 +5,70 @@ from sympy import Function, diff, exp, var
 DIM = 3
 
 X = var(f"X:{DIM}")
-U = Function("U")(*X)
+U = [Function(f"U{i}")(*X) for i in range(DIM)]
 
 
 def delta(i, j):
     return 1 if i == j else 0
 
 
-def g(i, j, *X):
-    return exp(2 * U) * delta(i, j)
+def g(i, j):
+    return exp(2 * U[j]) * delta(i, j)
 
 
-def h(i, j, *X):
-    return exp(-2 * U) * delta(i, j)
+def h(i, j):
+    return exp(-2 * U[j]) * delta(i, j)
 
 
-def GAMMA(i, j, k, *X):
+def gamma(i, j, k):
     G = 0
     for l in range(DIM):
         G += (
-            diff(g(j, l, *X), X[i], 1)
-            + diff(g(l, i, *X), X[j], 1)
-            - diff(g(i, j, *X), X[l], 1)
-        ) * h(l, k, *X)
+            diff(g(j, l), X[i], 1)
+            + diff(g(l, i), X[j], 1)
+            - diff(g(i, j), X[l], 1)
+        ) * h(l, k)
     return G
 
 
-def RIEM13(i, j, k, l, *X):
+def riem13(i, j, k, l):
     R = (
-        diff(GAMMA(i, k, l, *X), X[j], 1)
-        - diff(GAMMA(i, j, l, *X), X[k], 1)
+        diff(gamma(i, k, l), X[j], 1)
+        - diff(gamma(i, j, l), X[k], 1)
     )
     for m in range(DIM):
         R += (
-            GAMMA(i, k, m, *X) * GAMMA(m, j, l, *X)
-            - GAMMA(i, j, m, *X) * GAMMA(m, k, l, *X)
+            gamma(i, k, m) * gamma(m, j, l)
+            - gamma(i, j, m) * gamma(m, k, l)
         )
     return R
 
 
-def RIEM04(i, j, k, l, *X):
+def riem04(i, j, k, l):
     R = 0
     for m in range(DIM):
-        R += RIEM13(i, j, k, m, *X) * g(m, l, *X)
+        R += riem13(i, j, k, m) * g(m, l)
     return R
 
 
-def RICCI(i, j, *X):
+def ricci(i, j):
     R = 0
     for k in range(DIM):
-        R += RIEM13(i, k, j, k, *X)
+        R += riem13(i, k, j, k)
     return R
 
 
-def SCAL(*X):
+def scal():
     S = 0
     for i in range(DIM):
         for j in range(DIM):
-            S += RICCI(i, j, *X) * h(j, i, *X)
+            S += ricci(i, j) * h(j, i)
     return S
 
 
 def main():
-    print(SCAL(*X))
+    with open("brew/scal.txt", "w") as t_file:
+        print(scal(), file=t_file)
 
 
 if __name__ == "__main__":
