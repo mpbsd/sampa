@@ -5,6 +5,7 @@ from sympy import Function, diff, exp, var
 DIM = 3
 
 X = var(f"X:{DIM}")
+# U = Function("U")(*X)
 U = [Function(f"U{i}")(*X) for i in range(DIM)]
 
 
@@ -27,8 +28,8 @@ def gamma(i, j, k):
             diff(g(j, l), X[i], 1)
             + diff(g(l, i), X[j], 1)
             - diff(g(i, j), X[l], 1)
-        ) * h(l, k)
-    return G
+        ) * h(l, k) * 0.5
+    return G.simplify()
 
 
 def riem13(i, j, k, l):
@@ -41,21 +42,21 @@ def riem13(i, j, k, l):
             gamma(i, k, m) * gamma(m, j, l)
             - gamma(i, j, m) * gamma(m, k, l)
         )
-    return R
+    return R.simplify()
 
 
 def riem04(i, j, k, l):
     R = 0
     for m in range(DIM):
         R += riem13(i, j, k, m) * g(m, l)
-    return R
+    return R.simplify()
 
 
 def ricci(i, j):
     R = 0
     for k in range(DIM):
         R += riem13(i, k, j, k)
-    return R
+    return R.simplify()
 
 
 def scal():
@@ -63,7 +64,7 @@ def scal():
     for i in range(DIM):
         for j in range(DIM):
             S += ricci(i, j) * h(j, i)
-    return S
+    return S.simplify()
 
 
 def main():
