@@ -1,0 +1,92 @@
+-2.0*exp(-2*U0)*Derivative(U4, (X0, 2))
+-2.0*exp(-2*U0)*Derivative(U3, (X0, 2))
+-2.0*exp(-2*U0)*Derivative(U2, (X0, 2))
+-2.0*exp(-2*U0)*Derivative(U1, (X0, 2))
+-2.0*exp(-2*U1)*Derivative(U4, (X1, 2))
+-2.0*exp(-2*U1)*Derivative(U3, (X1, 2))
+-2.0*exp(-2*U1)*Derivative(U2, (X1, 2))
+-2.0*exp(-2*U1)*Derivative(U0, (X1, 2))
+-2.0*exp(-2*U2)*Derivative(U4, (X2, 2))
+-2.0*exp(-2*U2)*Derivative(U3, (X2, 2))
+-2.0*exp(-2*U2)*Derivative(U1, (X2, 2))
+-2.0*exp(-2*U2)*Derivative(U0, (X2, 2))
+-2.0*exp(-2*U3)*Derivative(U4, (X3, 2))
+-2.0*exp(-2*U3)*Derivative(U2, (X3, 2))
+-2.0*exp(-2*U3)*Derivative(U1, (X3, 2))
+-2.0*exp(-2*U3)*Derivative(U0, (X3, 2))
+-2.0*exp(-2*U4)*Derivative(U3, (X4, 2))
+-2.0*exp(-2*U4)*Derivative(U2, (X4, 2))
+-2.0*exp(-2*U4)*Derivative(U1, (X4, 2))
+-2.0*exp(-2*U4)*Derivative(U0, (X4, 2))
+
+-2.0*exp(-2*U0)*Derivative(U1, X0)**2
+-2.0*exp(-2*U0)*Derivative(U2, X0)**2
+-2.0*exp(-2*U0)*Derivative(U3, X0)**2
+-2.0*exp(-2*U0)*Derivative(U4, X0)**2
+-2.0*exp(-2*U1)*Derivative(U0, X1)**2
+-2.0*exp(-2*U1)*Derivative(U2, X1)**2
+-2.0*exp(-2*U1)*Derivative(U3, X1)**2
+-2.0*exp(-2*U1)*Derivative(U4, X1)**2
+-2.0*exp(-2*U2)*Derivative(U0, X2)**2
+-2.0*exp(-2*U2)*Derivative(U1, X2)**2
+-2.0*exp(-2*U2)*Derivative(U3, X2)**2
+-2.0*exp(-2*U2)*Derivative(U4, X2)**2
+-2.0*exp(-2*U3)*Derivative(U0, X3)**2
+-2.0*exp(-2*U3)*Derivative(U1, X3)**2
+-2.0*exp(-2*U3)*Derivative(U2, X3)**2
+-2.0*exp(-2*U3)*Derivative(U4, X3)**2
+-2.0*exp(-2*U4)*Derivative(U0, X4)**2
+-2.0*exp(-2*U4)*Derivative(U1, X4)**2
+-2.0*exp(-2*U4)*Derivative(U2, X4)**2
+-2.0*exp(-2*U4)*Derivative(U3, X4)**2
+
+-2.0*exp(-2*U4)*Derivative(U0, X4)*Derivative(U1, X4)
+-2.0*exp(-2*U4)*Derivative(U0, X4)*Derivative(U2, X4)
+-2.0*exp(-2*U4)*Derivative(U0, X4)*Derivative(U3, X4)
++2.0*exp(-2*U4)*Derivative(U0, X4)*Derivative(U4, X4)
+-2.0*exp(-2*U4)*Derivative(U1, X4)*Derivative(U2, X4)
+-2.0*exp(-2*U4)*Derivative(U1, X4)*Derivative(U3, X4)
++2.0*exp(-2*U4)*Derivative(U1, X4)*Derivative(U4, X4)
+-2.0*exp(-2*U4)*Derivative(U2, X4)*Derivative(U3, X4)
++2.0*exp(-2*U4)*Derivative(U2, X4)*Derivative(U4, X4)
++2.0*exp(-2*U4)*Derivative(U3, X4)*Derivative(U4, X4)
+-2.0*exp(-2*U3)*Derivative(U0, X3)*Derivative(U1, X3)
+-2.0*exp(-2*U3)*Derivative(U0, X3)*Derivative(U2, X3)
++2.0*exp(-2*U3)*Derivative(U0, X3)*Derivative(U3, X3)
+-2.0*exp(-2*U3)*Derivative(U0, X3)*Derivative(U4, X3)
+-2.0*exp(-2*U3)*Derivative(U1, X3)*Derivative(U2, X3)
++2.0*exp(-2*U3)*Derivative(U1, X3)*Derivative(U3, X3)
+-2.0*exp(-2*U3)*Derivative(U1, X3)*Derivative(U4, X3)
++2.0*exp(-2*U3)*Derivative(U2, X3)*Derivative(U3, X3)
+-2.0*exp(-2*U3)*Derivative(U2, X3)*Derivative(U4, X3)
++2.0*exp(-2*U3)*Derivative(U3, X3)*Derivative(U4, X3)
+-2.0*exp(-2*U2)*Derivative(U0, X2)*Derivative(U1, X2)
++2.0*exp(-2*U2)*Derivative(U0, X2)*Derivative(U2, X2)
+-2.0*exp(-2*U2)*Derivative(U0, X2)*Derivative(U3, X2)
+-2.0*exp(-2*U2)*Derivative(U0, X2)*Derivative(U4, X2)
++2.0*exp(-2*U2)*Derivative(U1, X2)*Derivative(U2, X2)
+-2.0*exp(-2*U2)*Derivative(U1, X2)*Derivative(U3, X2)
+-2.0*exp(-2*U2)*Derivative(U1, X2)*Derivative(U4, X2)
++2.0*exp(-2*U2)*Derivative(U2, X2)*Derivative(U3, X2)
++2.0*exp(-2*U2)*Derivative(U2, X2)*Derivative(U4, X2)
+-2.0*exp(-2*U2)*Derivative(U3, X2)*Derivative(U4, X2)
++2.0*exp(-2*U1)*Derivative(U0, X1)*Derivative(U1, X1)
+-2.0*exp(-2*U1)*Derivative(U0, X1)*Derivative(U2, X1)
+-2.0*exp(-2*U1)*Derivative(U0, X1)*Derivative(U3, X1)
+-2.0*exp(-2*U1)*Derivative(U0, X1)*Derivative(U4, X1)
++2.0*exp(-2*U1)*Derivative(U1, X1)*Derivative(U2, X1)
++2.0*exp(-2*U1)*Derivative(U1, X1)*Derivative(U3, X1)
++2.0*exp(-2*U1)*Derivative(U1, X1)*Derivative(U4, X1)
+-2.0*exp(-2*U1)*Derivative(U2, X1)*Derivative(U3, X1)
+-2.0*exp(-2*U1)*Derivative(U2, X1)*Derivative(U4, X1)
+-2.0*exp(-2*U1)*Derivative(U3, X1)*Derivative(U4, X1)
++2.0*exp(-2*U0)*Derivative(U0, X0)*Derivative(U1, X0)
++2.0*exp(-2*U0)*Derivative(U0, X0)*Derivative(U2, X0)
++2.0*exp(-2*U0)*Derivative(U0, X0)*Derivative(U3, X0)
++2.0*exp(-2*U0)*Derivative(U0, X0)*Derivative(U4, X0)
+-2.0*exp(-2*U0)*Derivative(U1, X0)*Derivative(U2, X0)
+-2.0*exp(-2*U0)*Derivative(U1, X0)*Derivative(U3, X0)
+-2.0*exp(-2*U0)*Derivative(U1, X0)*Derivative(U4, X0)
+-2.0*exp(-2*U0)*Derivative(U2, X0)*Derivative(U3, X0)
+-2.0*exp(-2*U0)*Derivative(U2, X0)*Derivative(U4, X0)
+-2.0*exp(-2*U0)*Derivative(U3, X0)*Derivative(U4, X0)

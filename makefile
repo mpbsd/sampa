@@ -2,6 +2,8 @@ build:
 	python3 -m pkgs.core
 
 black:
+	isort pkgs/riemannian_geometry.py
+	black -l 79 pkgs/riemannian_geometry.py
 	isort pkgs/core.py
 	black -l 79 pkgs/core.py
 
